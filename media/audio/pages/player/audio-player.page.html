@@ -1,0 +1,13 @@
+<ion-content fullscreen class="audio-player-content">
+  <ion-button class="close-button" fill="clear" type="button" aria-label="Luk afspiller" (click)="close()">
+    <ion-icon name="close-outline"></ion-icon>
+  </ion-button>
+
+  <app-audio-player
+    [sounds]="sounds"
+    [initialIndex]="current"
+    [loading]="loading"
+    [error]="error"
+    [autoplay]="true"
+  ></app-audio-player>
+</ion-content>

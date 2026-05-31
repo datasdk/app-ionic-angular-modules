@@ -1,0 +1,30 @@
+<ion-content class="settings-content">
+  <section class="settings-shell">
+    <section class="section-block">
+      <p>Opdater dine personlige oplysninger, så din profil er korrekt i appen.</p>
+    </section>
+
+    <form [formGroup]="form" (ngSubmit)="save()" class="settings-form">
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="firstName" label="Fornavn" labelPlacement="floating"></ion-input>
+      </ion-item>
+      <p *ngIf="fieldError('firstName')" class="error-text">{{ fieldError('firstName') }}</p>
+
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="lastName" label="Efternavn" labelPlacement="floating"></ion-input>
+      </ion-item>
+      <p *ngIf="fieldError('lastName')" class="error-text">{{ fieldError('lastName') }}</p>
+
+      <ion-item lines="none">
+        <ion-input type="email" formControlName="email" label="E-mail" labelPlacement="floating" placeholder="dig@email.dk"></ion-input>
+      </ion-item>
+      <p *ngIf="fieldError('email')" class="error-text">{{ fieldError('email') }}</p>
+      <p *ngIf="errors['form']" class="error-text">{{ errors['form'] }}</p>
+
+      <ion-button expand="block" type="submit" [disabled]="loading">
+        <ion-spinner *ngIf="loading" name="crescent" slot="start"></ion-spinner>
+        Gem ændringer
+      </ion-button>
+    </form>
+  </section>
+</ion-content>

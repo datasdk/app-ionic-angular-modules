@@ -1,0 +1,20 @@
+<ion-content class="ion-padding terms-content" [scrollY]="true">
+  <div class="terms-scroll">
+    <section class="page-heading">
+      <p>Kunsten at tæmme en tiger</p>
+      <h1>Betingelser</h1>
+    </section>
+
+    <app-loading *ngIf="loading" label="Henter betingelser"></app-loading>
+
+    <ion-card *ngIf="!loading && error">
+      <ion-card-content>{{ error }}</ion-card-content>
+    </ion-card>
+
+    <article *ngIf="!loading && content" class="terms-body" [innerHTML]="content"></article>
+
+    <ion-card *ngIf="!loading && !error && !content">
+      <ion-card-content>Der er ingen betingelser at vise.</ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

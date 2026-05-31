@@ -1,0 +1,17 @@
+<ion-content class="settings-content">
+  <section class="settings-shell">
+    <section class="section-block">
+      <p>{{ course ? 'Du har et aktivt forløb, som kan nulstilles her.' : 'Der er ikke et aktivt forløb at nulstille.' }}</p>
+      <ion-button
+        fill="outline"
+        color="danger"
+        type="button"
+        [disabled]="!course || loading"
+        (click)="reset()"
+      >
+        <ion-spinner *ngIf="loading" name="crescent" slot="start"></ion-spinner>
+        Nulstil forløb
+      </ion-button>
+    </section>
+  </section>
+</ion-content>

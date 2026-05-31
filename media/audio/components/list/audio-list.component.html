@@ -1,0 +1,50 @@
+<app-loading *ngIf="loading" label="Henter lydbøger" tone="light"></app-loading>
+
+<ion-card *ngIf="!loading && error" class="state-card">
+  <ion-card-content>{{ error }}</ion-card-content>
+</ion-card>
+
+<aside *ngIf="!loading && showAccessNotice" class="access-notice">
+  <p>
+    {{ accessNoticeText }}
+    <a *ngIf="showLoginLink" routerLink="/auth/login">Log ind nu</a>
+  </p>
+  <ion-button fill="clear" type="button" aria-label="Luk besked" (click)="closeAccessNotice.emit()">
+    <ion-icon name="close-outline"></ion-icon>
+  </ion-button>
+</aside>
+
+<section *ngIf="!loading && playlist?.sounds?.length" class="audio-list-container">
+  <ion-list lines="none" class="audio-list">
+    <ion-item
+      *ngFor="let sound of playlist?.sounds; let index = index"
+      class="audio-item"
+      button
+      detail="true"
+      [routerLink]="['/audiobook/player']"
+      [queryParams]="{ id: playlist?.id, index: index }"
+    >
+      <ion-thumbnail slot="start">
+        <div class="thumb-wrap" [class.loaded]="isImageLoaded(index)">
+          <ion-skeleton-text animated class="thumb-skeleton"></ion-skeleton-text>
+          <img
+            [src]="sound.image?.src || 'assets/kunsten-at/images/sound.jpg'"
+            [alt]="sound.name"
+            (load)="onImageLoaded(index)"
+            (error)="onImageLoaded(index)"
+          />
+        </div>
+      </ion-thumbnail>
+
+      <ion-label>
+        <h2>{{ sound.name }}</h2>
+        <p class="audio-author">Thomas Fryd</p>
+        <p *ngIf="sound.description" [innerHTML]="sound.description"></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</section>
+
+<ion-card *ngIf="!loading && !error && !playlist?.sounds?.length" class="state-card">
+  <ion-card-content>Der er ingen lydbøger at vise.</ion-card-content>
+</ion-card>

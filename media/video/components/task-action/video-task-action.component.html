@@ -1,0 +1,16 @@
+<ng-container *ngIf="!isIntro">
+  <ion-item *ngIf="activeTask" lines="none" class="task-check">
+    <ion-checkbox
+      justify="space-between"
+      labelPlacement="start"
+      [checked]="checked"
+      (ionChange)="setChecked(!!$event.detail.checked)"
+    >
+      Markér som færdig
+    </ion-checkbox>
+  </ion-item>
+
+  <ion-button *ngIf="!activeTask && !hasActiveTask" size="small" type="button" (click)="startCourse()">
+    Start forløb
+  </ion-button>
+</ng-container>

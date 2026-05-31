@@ -1,0 +1,151 @@
+:host {
+  display: block;
+  min-height: 100svh;
+  background: #2c2124;
+}
+
+.audio-player {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  align-content: center;
+  gap: clamp(12px, 2.6svh, 22px);
+  min-height: 100svh;
+  padding: calc(68px + var(--ion-safe-area-top, 0px)) 24px calc(30px + var(--ion-safe-area-bottom, 0px));
+  background: #2c2124;
+  color: #ffffff;
+}
+
+img {
+  width: min(66vw, 320px);
+  aspect-ratio: 1;
+  justify-self: center;
+  margin-bottom: 14px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 26px 56px rgba(0, 0, 0, 0.42);
+}
+
+.details {
+  width: min(100%, 560px);
+  justify-self: stretch;
+  padding-left: 8px;
+  text-align: left;
+}
+
+.eyebrow {
+  position: absolute;
+  left: 24px;
+  bottom: calc(16px + var(--ion-safe-area-bottom, 0px));
+  margin: 0;
+  z-index: 3;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.9rem, 7.4vw, 2.75rem);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: 0;
+}
+
+.author {
+  margin: 7px 0 0;
+  color: #ffffff;
+  font-size: clamp(0.94rem, 3.2vw, 1.08rem);
+  font-weight: 300;
+  opacity: 0.82;
+  line-height: 1.25;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.buttons ion-button {
+  --color: #ffffff;
+  --padding-start: 0;
+  --padding-end: 0;
+}
+
+.buttons ion-button[disabled] {
+  opacity: 0.35;
+}
+
+.skip {
+  width: 44px;
+  height: 44px;
+}
+
+.skip ion-icon {
+  font-size: 32px;
+}
+
+.play {
+  width: 72px;
+  height: 72px;
+}
+
+.play ion-icon {
+  font-size: 62px;
+}
+
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 8px;
+  color: #ffffff;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.85rem;
+}
+
+ion-range {
+  --bar-background: rgba(255, 255, 255, 0.26);
+  --bar-background-active: #ffffff;
+  --bar-height: 4px;
+  --bar-border-radius: 999px;
+  --knob-background: #ffffff;
+  --knob-size: 8px;
+  --knob-handle-size: 28px;
+  --knob-box-shadow: none;
+  --height: 28px;
+  width: calc(100% - 16px);
+  margin: 0 8px;
+  padding: 0;
+}
+
+@media (max-height: 700px) {
+  .audio-player {
+    gap: 12px;
+    padding-top: calc(58px + var(--ion-safe-area-top, 0px));
+  }
+
+  img {
+    width: min(48vw, 220px);
+  }
+
+  h1 {
+    font-size: clamp(1.55rem, 6.2vw, 2rem);
+  }
+
+  .play {
+    width: 62px;
+    height: 62px;
+  }
+
+  .play ion-icon {
+    font-size: 54px;
+  }
+}
+
+.state-card {
+  margin: 16px;
+  border-radius: 8px;
+}

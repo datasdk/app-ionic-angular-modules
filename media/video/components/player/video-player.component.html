@@ -1,0 +1,21 @@
+<div class="video-player" (click)="togglePlay()">
+  <iframe
+    #player
+    *ngIf="safeUrl"
+    [src]="safeUrl"
+    (load)="onLoad()"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+    playsinline
+    frameborder="0"
+    title="Vimeo video"
+  ></iframe>
+
+  <div class="overlay" *ngIf="loading">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+  <div class="play-hint" *ngIf="!loading && !isPlaying">
+    <ion-icon name="play-circle-outline"></ion-icon>
+  </div>
+</div>

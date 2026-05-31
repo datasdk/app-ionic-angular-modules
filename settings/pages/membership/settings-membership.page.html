@@ -1,0 +1,29 @@
+<ion-content class="settings-content">
+  <section class="settings-shell">
+    <section class="section-block">
+      <ion-badge [color]="isPro ? 'success' : 'medium'">
+        {{ isPro ? 'Betalende bruger' : 'Gratis bruger' }}
+      </ion-badge>
+    </section>
+
+    <section class="section-block">
+      <p>Gratis brugere har kun adgang til:</p>
+      <ul>
+        <li>1 video</li>
+        <li>1 podcast</li>
+      </ul>
+    </section>
+
+    <section class="section-block">
+      <p>Betalende medlemmer har adgang til:</p>
+      <ul>
+        <li>Alle videoer</li>
+        <li>Alle podcasts</li>
+      </ul>
+    </section>
+
+    <section class="section-block">
+      <p>Medlemskab kan købes via hjemmesiden.</p>
+    </section>
+  </section>
+</ion-content>

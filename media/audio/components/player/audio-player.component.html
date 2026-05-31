@@ -1,0 +1,48 @@
+<app-loading *ngIf="loading" label="Henter lyd" tone="light"></app-loading>
+
+<ion-card *ngIf="!loading && error" class="state-card">
+  <ion-card-content>{{ error }}</ion-card-content>
+</ion-card>
+
+<main *ngIf="!loading && currentSound" class="audio-player">
+  <img [src]="currentSound.image?.src || 'assets/kunsten-at/images/sound.jpg'" [alt]="currentSound.name" />
+
+  <section class="details">
+    <h1>{{ currentSound.name }}</h1>
+    <p class="author">Thomas Fryd</p>
+  </section>
+
+  <div class="time-row">
+    <span>{{ format(currentTime) }}</span>
+    <span>{{ format(duration) }}</span>
+  </div>
+
+  <ion-range
+    min="0"
+    max="100"
+    [ticks]="false"
+    [value]="progress"
+    (ionChange)="seek($event.detail.value)"
+    aria-label="Afspilningsposition"
+  ></ion-range>
+
+  <div class="buttons">
+    <ion-button class="skip" fill="clear" type="button" [disabled]="current === 0" (click)="previous()" aria-label="Forrige lyd">
+      <ion-icon name="play-skip-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <ion-button class="play" fill="clear" type="button" (click)="toggle()" aria-label="Afspil eller pause">
+      <ion-icon [name]="playing ? 'pause-circle-outline' : 'play-circle-outline'"></ion-icon>
+    </ion-button>
+
+    <ion-button class="skip" fill="clear" type="button" [disabled]="current === sounds.length - 1" (click)="next()" aria-label="Næste lyd">
+      <ion-icon name="play-skip-forward-circle-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <p class="eyebrow">{{ current + 1 }} / {{ sounds.length }}</p>
+</main>
+
+<ion-card *ngIf="!loading && !error && !currentSound" class="state-card">
+  <ion-card-content>Der blev ikke fundet lyd i afspilningslisten.</ion-card-content>
+</ion-card>

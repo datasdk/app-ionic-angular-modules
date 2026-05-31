@@ -1,0 +1,40 @@
+:host {
+  display: block;
+}
+
+ion-toolbar {
+  --background: #ffffff;
+  --color: var(--app-heading);
+  --border-width: 0;
+}
+
+ion-menu-button {
+  --color: var(--app-icon-color);
+}
+
+.header-back-button {
+  --color: var(--app-icon-color);
+  --padding-start: 8px;
+  --padding-end: 8px;
+  margin: 0;
+  font-weight: 800;
+  text-transform: none;
+}
+
+ion-title {
+  color: var(--app-heading);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.title-button {
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

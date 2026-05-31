@@ -1,0 +1,23 @@
+<ion-content class="settings-content">
+  <section class="settings-shell">
+    <section class="section-block">
+      <p class="status-line">{{ statusText }}</p>
+      <p *ngIf="enabled">Notifikationer kan ændres i telefonens indstillinger.</p>
+
+      <ion-note *ngIf="!isNative" color="medium">
+        Push-notifikationer kan først aktiveres i Android/iOS-buildet.
+      </ion-note>
+
+      <ion-button
+        *ngIf="!enabled"
+        expand="block"
+        type="button"
+        [disabled]="loading"
+        (click)="activate()"
+      >
+        <ion-spinner *ngIf="loading" name="crescent" slot="start"></ion-spinner>
+        Aktivér notifikationer
+      </ion-button>
+    </section>
+  </section>
+</ion-content>

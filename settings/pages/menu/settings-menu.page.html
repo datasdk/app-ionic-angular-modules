@@ -1,0 +1,13 @@
+<ion-content class="settings-content">
+  <ion-list lines="full" class="settings-menu-list">
+    <ion-item
+      *ngFor="let item of items"
+      button
+      detail="true"
+      [routerLink]="item.path"
+      routerDirection="forward"
+    >
+      <ion-label>{{ item.label }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

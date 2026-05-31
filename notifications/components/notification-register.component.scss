@@ -1,0 +1,20 @@
+ion-note {
+  display: block;
+  padding: 10px 0;
+  line-height: 1.4;
+}
+
+.notification-status,
+.notification-note {
+  margin: 0 0 10px;
+  color: #58635f;
+  line-height: 1.4;
+}
+
+.notification-status {
+  font-weight: 800;
+}
+
+.notification-note {
+  font-size: 0.92rem;
+}

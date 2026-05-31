@@ -1,0 +1,61 @@
+<app-loading *ngIf="loading" label="Henter video" tone="light"></app-loading>
+
+<ion-card *ngIf="!loading && error" class="state-card">
+  <ion-card-content>{{ error }}</ion-card-content>
+</ion-card>
+
+<ion-card *ngIf="!loading && !error && !videos.length" class="state-card">
+  <ion-card-content>Der er ingen videoer i denne oversigt.</ion-card-content>
+</ion-card>
+
+<section *ngIf="!loading && videos.length" class="playlist">
+  <button type="button" class="close-button" routerLink="/home/dashboard" aria-label="Luk video">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+  <button *ngIf="canStartCourse" type="button" class="start-course-button" (click)="startCourseRequested.emit()">Start forløb</button>
+  <button *ngIf="showTestFinish" type="button" class="test-finish-button" (click)="testFinishRequested.emit()">Test færdig</button>
+
+  <aside *ngIf="showAccessNotice" class="access-notice">
+    <p>
+      {{ accessNoticeText }}
+      <a *ngIf="showLoginLink" routerLink="/auth/login">Log ind nu</a>
+    </p>
+    <ion-button fill="clear" type="button" aria-label="Luk besked" (click)="closeAccessNotice.emit()">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-button>
+  </aside>
+
+  <div
+    #track
+    class="playlist-track"
+    [class.dragging]="dragging"
+    (pointerdown)="onPointerDown($event)"
+    (pointermove)="onPointerMove($event)"
+    (pointerup)="onPointerUp($event)"
+    (pointercancel)="onPointerUp($event)"
+  >
+    <article *ngFor="let video of videos; let index = index" class="video-slide" [class.active]="index === current" [style.transform]="slideTransform">
+      <app-video-player [url]="video.url" [active]="index === current" [autoplay]="index === current"></app-video-player>
+    </article>
+  </div>
+
+  <button type="button" class="finish-bubble" [disabled]="!canFinishTask" (click)="canFinishTask && finishTaskRequested.emit()">
+    Markér som færdig
+  </button>
+
+  <h1 class="video-title">{{ currentVideo?.name }} <span>({{ current + 1 }}/{{ videos.length }})</span></h1>
+
+  <div class="video-dots" aria-label="Vælg video">
+    <div class="video-dots-track">
+      <button
+        *ngFor="let video of videos; let index = index"
+        #dotButton
+        type="button"
+        [class.active]="index === current"
+        [attr.aria-label]="'Gå til video ' + (index + 1)"
+        (click)="goTo(index)"
+      ></button>
+    </div>
+  </div>
+</section>

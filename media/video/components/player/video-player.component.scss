@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.video-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background: #000000;
+  overflow: hidden;
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.overlay,
+.play-hint {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+}
+
+.play-hint {
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 64px;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+}

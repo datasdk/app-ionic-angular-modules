@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.audio-content {
+  --background: #f6f8f6;
+}
+
+.page-heading {
+  margin-bottom: 18px;
+}
+
+.page-heading p,
+.page-heading h1 {
+  margin: 0;
+}
+
+.page-heading h1 {
+  color: var(--app-heading);
+  font-size: 1.55rem;
+}

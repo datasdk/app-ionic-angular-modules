@@ -1,0 +1,11 @@
+<ion-content class="settings-content">
+  <section class="settings-shell">
+    <section class="section-block danger-block">
+      <p>Kontoen slettes permanent. Eventuelle spørgsmål skal ske via hjemmesiden.</p>
+      <ion-button expand="block" color="danger" type="button" [disabled]="loading" (click)="deleteUser()">
+        <ion-spinner *ngIf="loading" name="crescent" slot="start"></ion-spinner>
+        Slet bruger
+      </ion-button>
+    </section>
+  </section>
+</ion-content>

@@ -1,0 +1,25 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.settings-content {
+  --background: #ffffff;
+}
+
+.settings-menu-list {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+}
+
+.settings-menu-list ion-item {
+  --min-height: 58px;
+  --padding-start: 18px;
+  --inner-padding-end: 14px;
+  --background: #ffffff;
+  --color: #1f2933;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}

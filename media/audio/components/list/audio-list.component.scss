@@ -1,0 +1,137 @@
+.access-notice {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  margin: 16px 16px 14px;
+  padding: 12px 10px 12px 14px;
+  border-radius: 8px;
+  background: rgba(22, 27, 36, 0.82);
+  color: #ffffff;
+}
+
+.access-notice p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.access-notice a {
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.access-notice ion-button {
+  --color: #ffffff;
+  --padding-start: 0;
+  --padding-end: 0;
+  width: 34px;
+  height: 34px;
+}
+
+.audio-list-container {
+  padding: 16px 16px calc(18px + var(--ion-safe-area-bottom, 0px));
+}
+
+.audio-list {
+  padding: 0;
+  background: transparent;
+}
+
+.audio-item {
+  --min-height: 92px;
+  --background: #ffffff;
+  --background-hover: #f1f6f2;
+  --background-activated: #e7f1e9;
+  --border-radius: 8px;
+  --inner-padding-end: 14px;
+  --inner-padding-start: 10px;
+  --padding-start: 12px;
+  border: 1px solid var(--app-border);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 22px rgba(31, 41, 51, 0.07);
+}
+
+.audio-item:last-child {
+  margin-bottom: 0;
+}
+
+ion-thumbnail {
+  --border-radius: 8px;
+  width: 70px;
+  height: 70px;
+}
+
+ion-thumbnail img {
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.thumb-wrap {
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+
+.thumb-skeleton {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: relative;
+  z-index: 1;
+  transition: opacity 180ms ease;
+}
+
+.thumb-wrap.loaded img {
+  opacity: 1;
+}
+
+.thumb-wrap.loaded .thumb-skeleton {
+  display: none;
+}
+
+ion-label {
+  padding-left: 6px;
+}
+
+ion-label h2 {
+  margin-bottom: 5px;
+  color: var(--app-heading);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.audio-author {
+  margin: 0 0 5px;
+  color: #8a9690;
+  font-size: 0.86rem;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+ion-label p {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #64716b;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.audio-item ion-icon[slot='end'] {
+  color: var(--ion-color-primary);
+  font-size: 1.5rem;
+}
+
+.state-card {
+  margin: 16px;
+  border-radius: 8px;
+}

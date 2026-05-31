@@ -1,0 +1,55 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.terms-content {
+  --background: #f6f8f6;
+}
+
+.terms-content::part(scroll) {
+  overflow-y: auto;
+}
+
+.terms-scroll {
+  min-height: 100%;
+  padding-bottom: 18px;
+}
+
+.page-heading {
+  margin-bottom: 18px;
+}
+
+.page-heading p,
+.page-heading h1 {
+  margin: 0;
+}
+
+.page-heading p {
+  color: var(--ion-color-medium);
+  font-weight: 800;
+}
+
+.page-heading h1 {
+  color: var(--app-heading);
+  font-size: 1.55rem;
+}
+
+.terms-body {
+  overflow: visible;
+  max-height: none;
+  background: #ffffff;
+  border: 1px solid var(--app-border);
+  border-radius: 8px;
+  padding: 16px;
+  line-height: 1.58;
+  box-shadow: 0 8px 22px rgba(31, 41, 51, 0.06);
+}
+
+.terms-body :where(h1, h2, h3, h4) {
+  color: var(--app-heading);
+}
+
+.terms-body :where(p, ul, ol) {
+  margin-top: 0;
+}

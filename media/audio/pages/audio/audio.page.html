@@ -1,0 +1,11 @@
+<ion-content class="audio-content">
+  <app-audio-list
+    [playlist]="playlist"
+    [loading]="loading"
+    [error]="error"
+    [showAccessNotice]="showAccessNotice"
+    [accessNoticeText]="accessNoticeText"
+    [showLoginLink]="showLoginLink"
+    (closeAccessNotice)="closeAccessNotice()"
+  ></app-audio-list>
+</ion-content>

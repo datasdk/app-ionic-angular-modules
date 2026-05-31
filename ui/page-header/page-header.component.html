@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons *ngIf="effectiveBackHref" slot="start">
+      <ion-button *ngIf="effectiveBackHref" fill="clear" type="button" class="header-back-button" (click)="goBack()">
+        <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+        {{ backText }}
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons *ngIf="effectiveShowMenu" slot="end">
+      <ion-menu-button [menu]="menuId"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+      <button type="button" class="title-button" (click)="goToDashboard()">
+        {{ pageTitle }}
+      </button>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>

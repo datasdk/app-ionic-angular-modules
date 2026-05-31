@@ -1,0 +1,19 @@
+<ion-content fullscreen class="videos-content" [scrollY]="false">
+  <app-video-playlist
+    [videos]="videos"
+    [current]="current"
+    [loading]="loading"
+    [error]="error"
+    [showAccessNotice]="showAccessNotice"
+    [accessNoticeText]="accessNoticeText"
+    [showLoginLink]="showLoginLink"
+    [canStartCourse]="canStartCourse"
+    [canFinishTask]="canFinishTask"
+    [showTestFinish]="showTestFinish"
+    (currentChange)="setCurrent($event)"
+    (closeAccessNotice)="showAccessNotice = false"
+    (startCourseRequested)="startCourse()"
+    (finishTaskRequested)="finishTask()"
+    (testFinishRequested)="triggerTestFinish()"
+  ></app-video-playlist>
+</ion-content>

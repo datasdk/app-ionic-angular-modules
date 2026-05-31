@@ -1,0 +1,14 @@
+.section-block ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #58635f;
+  display: grid;
+  gap: 4px;
+}
+
+ion-badge {
+  justify-self: start;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.86rem;
+}

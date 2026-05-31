@@ -1,0 +1,22 @@
+.loading-wrap {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  color: var(--ion-color-medium);
+}
+
+.loading-wrap-light {
+  min-height: 100svh;
+  background: #05070d;
+  color: #ffffff;
+}
+
+.loading-wrap-light ion-spinner {
+  color: #ffffff;
+  --color: #ffffff;
+}
+
+span {
+  font-size: 0.95rem;
+}

@@ -1,0 +1,22 @@
+<app-page-header></app-page-header>
+
+<ion-tabs>
+  <ion-router-outlet [animated]="true"></ion-router-outlet>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button type="button" (click)="navigate('/home/dashboard')" [class.tab-selected]="currentUrl === '/home' || currentUrl.startsWith('/home/dashboard')">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Forside</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button type="button" (click)="navigate('/home/results')" [class.tab-selected]="currentUrl.startsWith('/home/results')">
+      <ion-icon name="trending-up-outline"></ion-icon>
+      <ion-label>Statistik</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button type="button" (click)="navigate('/home/audiobook')" [class.tab-selected]="currentUrl.startsWith('/home/audiobook')">
+      <ion-icon name="musical-notes-outline"></ion-icon>
+      <ion-label>Lydbøger</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

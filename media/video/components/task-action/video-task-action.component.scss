@@ -1,0 +1,21 @@
+.task-check {
+  --padding-start: 12px;
+  --inner-padding-end: 12px;
+  --min-height: 44px;
+  --background: rgba(0, 0, 0, 0.58);
+  --border-radius: 8px;
+  color: #ffffff;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+ion-checkbox {
+  --checkbox-background: rgba(255, 255, 255, 0.16);
+  --checkbox-background-checked: var(--app-icon-color);
+  --border-color: rgba(255, 255, 255, 0.72);
+  --border-color-checked: var(--app-icon-color);
+  --checkmark-color: #ffffff;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
