@@ -1,0 +1,54 @@
+.welcome-content {
+  --background: #ffffff;
+}
+
+.welcome-hero {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  min-height: 100%;
+  padding: 38px 22px;
+  text-align: center;
+}
+
+.welcome-hero img {
+  width: min(56vw, 220px);
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.welcome-hero h1 {
+  max-width: 24rem;
+  margin: 0 0 12px;
+  color: var(--app-heading);
+  font-size: clamp(2rem, 8vw, 3.1rem);
+  line-height: 1.05;
+}
+
+.welcome-hero p {
+  max-width: 31rem;
+  margin: 0 0 22px;
+  color: #58635f;
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.welcome-hero ion-button {
+  --background: var(--app-icon-color);
+  --background-hover: #4567a6;
+  --border-radius: 8px;
+  min-width: 176px;
+  min-height: 48px;
+  font-weight: 900;
+}
+
+.guest-link {
+  margin-top: 12px;
+  padding: 8px 10px;
+  border: 0;
+  background: transparent;
+  color: var(--app-icon-color);
+  font: inherit;
+  font-weight: 900;
+}

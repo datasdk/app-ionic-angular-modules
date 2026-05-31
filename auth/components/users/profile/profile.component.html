@@ -1,0 +1,23 @@
+<div>
+
+    <h2>Brugere</h2>
+
+   <button (click)="loadUsers()">Load users</button>
+
+
+    <div *ngFor="let user of users">
+
+        <div>
+            {{ user.$attributes.first_name }} {{ user.$attributes.email }}
+        </div>
+
+        <div>
+            <div>{{ user.$attributes.address?.street }} </div>
+            <div>{{ user.$attributes.address?.post_code }} {{ user.$attributes.address?.city }}</div>
+        </div>
+            
+    </div>
+
+</div>
+
+

@@ -1,0 +1,19 @@
+.auth-header ion-toolbar {
+  --background: #ffffff;
+  --color: var(--app-heading);
+}
+
+.auth-header ion-back-button {
+  --color: var(--app-icon-color);
+}
+
+.auth-content {
+  --background: #ffffff;
+}
+
+.auth-container {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px 18px;
+}

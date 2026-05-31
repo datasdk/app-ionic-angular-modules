@@ -1,0 +1,40 @@
+<div class="auth-form">
+  <header>
+    <h1>Log ind</h1>
+    <p>Fortsæt til dine forløb, lydbøger og statistik.</p>
+  </header>
+
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <ion-item lines="none">
+      <ion-input
+        type="email"
+        formControlName="email"
+        placeholder="dig@email.dk"
+        label="E-mail"
+        labelPlacement="floating"
+      ></ion-input>
+    </ion-item>
+
+    <p *ngIf="errors?.email" class="error-text">{{ errors?.email }}</p>
+
+    <ion-item lines="none">
+      <ion-input
+        type="password"
+        formControlName="password"
+        label="Kodeord"
+        labelPlacement="floating"
+        placeholder="Indtast kodeord"
+      ></ion-input>
+    </ion-item>
+
+    <a class="forgot-link" [routerLink]="['/auth/reset']">Glemt kodeord?</a>
+    <p *ngIf="errors?.password" class="error-text">{{ errors?.password }}</p>
+
+    <ion-button expand="block" type="submit" [disabled]="loading">
+      <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+      <span *ngIf="!loading">Log ind</span>
+    </ion-button>
+
+    <a class="register-link" routerLink="/auth/register">Opret ny konto</a>
+  </form>
+</div>

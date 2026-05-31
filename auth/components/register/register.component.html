@@ -1,0 +1,33 @@
+<div class="auth-form">
+  <header>
+    <h1>Opret bruger</h1>
+    <p>Opret en konto for at gemme forløb og følge din udvikling.</p>
+  </header>
+
+  <form [formGroup]="registerForm" (ngSubmit)="submit()">
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="firstname" label="Fornavn" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <p *ngIf="errors?.firstname" class="error-text">{{ errors?.firstname }}</p>
+
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="lastname" label="Efternavn" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <p *ngIf="errors?.lastname" class="error-text">{{ errors?.lastname }}</p>
+
+    <ion-item lines="none">
+      <ion-input type="email" formControlName="email" label="E-mail" labelPlacement="floating" placeholder="dig@email.dk"></ion-input>
+    </ion-item>
+    <p *ngIf="errors?.email" class="error-text">{{ errors?.email }}</p>
+
+    <ion-item lines="none">
+      <ion-input type="password" formControlName="password" label="Kodeord" labelPlacement="floating" placeholder="Indtast kodeord"></ion-input>
+    </ion-item>
+    <p *ngIf="errors?.password" class="error-text">{{ errors?.password }}</p>
+
+    <ion-button expand="block" type="submit" [disabled]="loading">
+      <ion-spinner *ngIf="loading" name="crescent"></ion-spinner>
+      <span *ngIf="!loading">Opret bruger</span>
+    </ion-button>
+  </form>
+</div>
